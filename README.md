@@ -1,14 +1,29 @@
 # (팀 미션) 뉴스 요약 자동화 #  
 
+
+------------  
+## ⭐  기획서  ⭐   
 매일 수많은 뉴스가 쌓이는 정보중에서 "내가 정말 놓치면 안 되는 중요한 키워드"나 "특정 주제"가 포함된 정보들을 요약된 내용을 모아서 볼 수 있는 시나리오입니다.  
 
-목표  
+✅ 목표  
 *RSS 피드에서 자동으로 뉴스를 수집하고, AI로 요약한 후, 노션 데이터베이스에 저장하는 완전 자동화 워크플로우 구축*  
+ 
+------------  
+
+### 📌  역할 분담 
+
+| 데이터 소스& 트리거 | AI 요약 담당<br>(AI 프롬프트 엔지니어)  | 협업 도구 연동 | 통합& 품질 관리 |  
+| :---: | :---: | :---: | :---: |  
+| 유주현 | 김서영 | 민미경 | 민미경 |  
+| RSS 피드 수집 구조 설계 | 생성형 AI 연결 및 프롬프트 설계 | Notion 협업 툴 API 연결 | 전체 파이프라인 설계및 시각화 |  
+| 스케쥴 트리거<br>(예: 매일 아침 8시 실행) 설정 | 요약 포맷<br>(짧은 헤드라인 + 3줄 요약) 표준화 | 저장 구조 설계 | 모듈 간 연결 테스트 <br>(RSS->AI->Notion) |  
+| 주제 필터링<br>(예: "네이버" 키워드만) 정의 | 품질 검중<br>(요약이 정확하고 중복여부 확인) | 메타데이터<br>(출처, 링크) 자동 기록 | 에러 로깅 체계 구축 |  
+
 
 ------------  
 ## ⭐  시스템 아키텍처  ⭐   
 ------------  
-####  최종 파이프라인 (단일 흐름)   :  RSS(2) → OpenAI(5) → Notion(8)  
+#### ✅ 최종 파이프라인 (단일 흐름)   :  RSS(2) → OpenAI(5) → Notion(8)  
 
 1. 각 단계별 구조 및 역할  
     - Trigger (1개): RSS (새 정보 도착)
@@ -16,22 +31,24 @@
     - OpenAI (1개): AI 요약
     - Action (1개): Notion 기록 (데이터베이스 기록)
 
-2. 주요 기능  
+2. 주요 기능
+   
      ✅ RSS 피드 자동 감지 (새 항목만)  
      ✅ 키워드 필터링 (네이버 주식 관련)  
      ✅ AI 요약 (OpenAI GPT-4o-mini)  
      ✅ URL 자동 정제 및 디코딩  
      ✅ 노션 자동 저장  
      
-####  WORKFLOW 
+### 📌  WORKFLOW 
 <img width="739" height="486" alt="image" src="https://github.com/user-attachments/assets/7ae0af1d-fbc3-4255-99f7-79fe9df26709" />
 
-1. 모듈별 상세 설명  
-### 📌 Module 2 - RSS
+1. 모듈별 상세 설명
+   
+#### ✅ Module 2 - RSS / Watch RSS feed item
   - *역할: 새 정보 감지*
   - *주기: 15분 간격으로 정기적으로 실행*  
 
-### 📌 Module 5 - OpenAI / Generate a completion ⭐ 핵심 모듈
+#### ✅ Module 5 - OpenAI / Generate a completion 
   - *역할: 뉴스 요약*  
   - *모델: GPT-4o*  
   - *프롬프트 구조*  
@@ -53,33 +70,50 @@
             뉴스 내용:
             {{2.title}}+{{2.description}}
 
-### 📌 Module 8 - Notion Generate a completion ⭐ 핵심 모듈Create a Data Source Item  
-- **역할:** 생성된 모든 콘텐츠를 Notion DB에 저장  
-- **저장 필드 (11개):**  
+#### ✅ Module 8 - Notion / Create a Data Source Item  
+  - *역할: 생성된 모든 콘텐츠를 Notion DB에 저장*  
+  - *저장 필드 (5개):* 
 
-    | Notion 속성 | 데이터 소스 | 타입 |
-    |-------------|------------|------|
-    | 제목 | rss.title | Title |
-    | 요약 | blog.content | Text |
-    | 키워드 | textparser.$1 | Text |
-    | URL | rss.url | URL |
-    | Date | rss.datecreated | Date |
+            | Notion 속성 | 데이터 소스 | 타입 |
+            |-------------|------------|------|
+            | 제목 | rss.title | Title |
+            | 요약 | blog.content | Text |
+            | 키워드 | textparser.$1 | Text |
+            | URL | rss.url | URL |
+            | Date | rss.datecreated | Date |
     
 
-------------
 
-5. 에러처리 
 
-------------
-자동화 툴(Make.com)에서 에러 처리는 **"흐름이 끊기지 않게 하는 것"**과 **"문제가 생겼을 때 알림을 받는 것"**이 핵심입니다. 질문하신 워크플로우에서 에러 처리가 꼭 필요한 지점과 방법을 단계별로 짚어드릴게요.
 
-1. 에러 처리가 가장 필요한 핵심 지점 (Top 3)
-  - OpenAI (Generate a completion): 가장 에러가 잦은 구간입니다. (API 호출 한도 초과, 서버 타임아웃, 부적절한 콘텐츠 필터링 등)
+
+### 📌  에러처리  
+
+자동화 툴(Make.com)에서 에러 처리는 **"흐름이 끊기지 않게 하는 것"**과 **"문제가 생겼을 때 알림을 받는 것"**이 핵심입니다.  
+
+1. 에러 알림 구조 설계
+에러가 발생해도 전체 워크플로우가 멈추지 않고, 나에게 이메일을 보낸 뒤 다음 단계로 넘어가는 구조.  
+
+        구조: [에러 발생 모듈] -> [에러 핸들러 경로] -> [Email 모듈] -> [Resume/Ignore]
+
+2. 에러 처리가 가장 필요한 핵심 지점 (Top 2)
+  - OpenAI (Generate a completion): 가장 에러가 잦은 구간입니다. (API 호출 한도 초과, 서버 타임아웃, 부적절한 콘텐츠 필터링 등)  
   - Notion (Create a Database Item): 네트워크 오류나 데이터베이스 속성 불일치로 실패할 수 있습니다.
-  - Text Parser (Match pattern): RSS에서 가져온 텍스트 형식이 바뀌어 정규표현식(Regex)이 매칭되지 않을 때 에러가 날 수 있습니다.
 
+3. 에러 처리 방법
+   
+        OpenAI 에러 발생 시 → Email 모듈 (나에게 알림) → Resume (기본값으로 다음 단계 진행)
+        Notion 에러 발생 시 → Email 모듈 (나에게 알림) → Resume (해당 뉴스 종료)or Ignore (해당 뉴스 건너뜀)
 
+4. 에러 메일 내용
 
+        [Make 에러 알림] 뉴스 요약 워크플로우 오류 발생
+
+        <b>📍 발생 지점:</b> 에러 발생 모듈명<br>
+        <b>⚠️ 에러 메시지:</b> {{Error.Message}}<br>
+        <b>📰 관련 뉴스:</b> <a href="{{url}}">{{title}}</a><br>
+        <br>
+        확인 후 조치가 필요합니다.
 
 
 
