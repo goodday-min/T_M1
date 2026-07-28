@@ -23,21 +23,25 @@
 ------------  
 ## ⭐  시스템 아키텍처  ⭐   
 ------------  
-#### ✅ 최종 파이프라인 (단일 흐름)   :  RSS(2) → OpenAI(5) → Notion(8)  
+#### ✅ 최종 파이프라인 (단일 흐름)  
+    
+    스케쥴 트리거(15분 마다) ->RSS(2) → OpenAI(5) → Notion(8)  
 
-1. 각 단계별 구조 및 역할  
+1. 각 단계별 구조 및 역할
+   
     - Trigger (1개): RSS (새 정보 도착)
     - Filter (1개): 필터를 사용하여 뉴스 제목에 '특정 키워드(네이버)'가 있으면 넘어 감
     - OpenAI (1개): AI 요약
     - Action (1개): Notion 기록 (데이터베이스 기록)
 
 2. 주요 기능
-   
-     ✅ RSS 피드 자동 감지 (새 항목만)  
-     ✅ 키워드 필터링 (네이버 주식 관련)  
-     ✅ AI 요약 (OpenAI GPT-4o-mini)  
+
+     ✅ 스케쥴 트리거 : 정기적으로 15분 마다
+     ✅ RSS 자동 감지 : 지정 RSS에서 최신 항목 가져오기 
+     ✅ 키워드 필터링 (네이버 주식 관련)  : 키워드 조건 만족 항목 선택
+     ✅ AI 요약 (OpenAI GPT-4o-mini)  : 프롬프트 적용, 3줄 요약 생성  
      ✅ URL 자동 정제 및 디코딩  
-     ✅ 노션 자동 저장  
+     ✅ Notion 자동 저장  : 제목/요약/키워드/요약/날짜 매핑 저장
      
 ### 📌  WORKFLOW 
 <img width="739" height="486" alt="image" src="https://github.com/user-attachments/assets/7ae0af1d-fbc3-4255-99f7-79fe9df26709" />
@@ -83,6 +87,7 @@
             | Date | rss.datecreated | Date |
     
 
+<img width="1430" height="647" alt="image" src="https://github.com/user-attachments/assets/3c7e067c-c77e-4492-813c-e6a025fa2d74" />
 
 
 
