@@ -151,9 +151,11 @@
   이 절차를 따르면 동일한 키워드 집합이 도출됨을 확인할 수 있다.
 
     
-  - *필터 적용 화면(로그)*    
-   <img width="957" height="756" alt="image" src="https://github.com/user-attachments/assets/a962fa32-9d5e-4ae9-8c3f-0c44461d76f3" />
+  - *필터 적용 화면(로그)*
 
+<img width="534" height="790" alt="image" src="https://github.com/user-attachments/assets/7ffd71c7-6ee7-449f-baf2-bdcf09db671d" />
+
+   
 
 ### ✅ Module 5 - OpenAI / Generate a completion 
   - *역할: 뉴스 요약*  
