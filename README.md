@@ -98,7 +98,7 @@
 
 #### ✅ Module 8 - Notion / Create a Data Source Item  
   - *역할: 생성된 모든 콘텐츠를 Notion DB에 저장*  
-  - *저장 필드 (5개):* 
+  - *저장 필드 (6개):* 
 
             | Notion 속성 | 데이터 소스 | 타입 |
             |-------------|------------|------|
@@ -107,11 +107,13 @@
             | 키워드 | textparser.$1 | Text |
             | URL | rss.url | URL |
             | Date | rss.datecreated | Date |
-    
+            | GUID | rss.guid | text |
 
 <img width="1430" height="647" alt="image" src="https://github.com/user-attachments/assets/3c7e067c-c77e-4492-813c-e6a025fa2d74" />
 
-
+  - *중복 방지 키 설정 및 선정 이유 :* GUID (Globally Unique Identifier)
+    뉴스 자동화 프로그램의 경우 단순 고유 ID 부여를 통해 각 콘텐츠 식별용으로 사용하기 위해 GUID를 사용하였음. 
+    
 ------------  
 
 ### 📌  에러처리  
