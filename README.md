@@ -93,6 +93,9 @@
             뉴스 내용:
             {{2.title}}+{{2.description}}
 
+    <img width="543" height="803" alt="image" src="https://github.com/user-attachments/assets/d985f859-bf13-4c89-84f0-952cb661c1d6" />
+
+
 #### ✅ Module 8 - Notion / Create a Data Source Item  
   - *역할: 생성된 모든 콘텐츠를 Notion DB에 저장*  
   - *저장 필드 (5개):* 
