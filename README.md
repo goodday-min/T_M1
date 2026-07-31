@@ -1,6 +1,5 @@
 # (팀 미션) 뉴스 요약 자동화 #  
 
-
 ------------  
 ## ⭐  기획서  ⭐   
 매일 수많은 뉴스가 쌓이는 정보중에서 "내가 정말 놓치면 안 되는 중요한 키워드"나 "특정 주제"가 포함된 정보들을 요약된 내용을 모아서 볼 수 있는 시나리오입니다.  
@@ -52,7 +51,25 @@
    
 #### ✅ Module 2 - RSS / Watch RSS feed item
   - *역할: 새 정보 감지*
-  - *주기: 15분 간격으로 정기적으로 실행*  
+  - *스케쥴: 매일 8시 정기적으로 실행*
+    
+  - *스케쥴 실행 화면(로그)*  
+    <img width="495" height="356" alt="image" src="https://github.com/user-attachments/assets/4a3c956b-20f4-4f84-a793-f5aa703ed4fd" />
+
+
+  - *RSS 수집 실행 화면(로그)*  
+   <img width="538" height="301" alt="image" src="https://github.com/user-attachments/assets/59a67d79-20c3-4f6b-91b6-e841365bdfe4" />
+
+#### ✅ Filter  
+
+  - 키워드 필터링 : 키워드 조건(예:네이버) 만족 항목 선택  
+  - 키워드 기준 및 목록 : 매일 수많은 뉴스가 쌓이는 정보 중에서 "내가 정말 놓치면 안 되는 중요한 키워드"나 "특정 주제"가 포함된 정보들을 요약된 내용을 모아서 볼 수 있는 자동화 프로그램으로, 
+                         관심 있는 주식 정보(뉴스)를 요약된 내용으로 받아보고 싶어서 만들었습니다.
+                         주식 관련 정보를 위한 키워드로 실적, 가이던스, 매출, 분기, 영업이익, 기업보고서를 넣었습니다.
+    
+  - *필터 적용 화면(로그)*    
+   <img width="957" height="756" alt="image" src="https://github.com/user-attachments/assets/a962fa32-9d5e-4ae9-8c3f-0c44461d76f3" />
+
 
 #### ✅ Module 5 - OpenAI / Generate a completion 
   - *역할: 뉴스 요약*  
