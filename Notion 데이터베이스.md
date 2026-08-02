@@ -16,7 +16,7 @@
       중복 방지 키 설정 및 선정 이유 : GUID (Globally Unique Identifier)  
       뉴스 자동화 프로그램의 경우 단순 고유 ID 부여를 통해 각 콘텐츠 식별용으로 사용하기 위해 GUID를 사용하였음.  
 
-- Make에서 notion 모듈에 데이터가 셋팅되는 화면  
+- Notion 실행 화면(로그) : Make에서 notion 모듈에 데이터가 실행되는 화면  
 <img width="427" height="528" alt="image" src="https://github.com/user-attachments/assets/995c86a4-2462-468e-a1a1-3862070a4d71" />
 
 
