@@ -52,7 +52,8 @@
    
 ### ✅ Module 2 - RSS / Watch RSS feed item  
   - *역할: 새 정보 감지*  
-  - *스케쥴: 매일 8시 정기적으로 실행*  
+  - *스케쥴: 매일 8시 정기적으로 실행*
+  - RSS 피드 URL : https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=ko&gl=KR&ceid=KR:ko  
     
   - *트리거 실행 화면(로그)*
     
@@ -60,9 +61,9 @@
 
 
   - *RSS 수집 실행 화면(로그)*
-    
-   <img width="538" height="301" alt="image" src="https://github.com/user-attachments/assets/59a67d79-20c3-4f6b-91b6-e841365bdfe4" />  
 
+   <img width="443" height="508" alt="image" src="https://github.com/user-attachments/assets/b7852938-3de6-4501-aaff-dd627c90c763" />
+ 
 ### ✅ Filter  
 
   - 키워드 필터링 : 특정 기업의 투자 관련 정보(뉴스) 수집을 위해 실적, 영업이익, 매출, 배당, 분기, 증권사, 리포트, 분석, 전망, 컨센서스로 한다.  
