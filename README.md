@@ -26,23 +26,24 @@
 
 #### ✅ 파이프라인 
     
-    스케쥴 트리거(매일 아침 8시 정각) ->RSS(2) → OpenAI(5) → Notion(8)  
+    스케쥴 트리거(매일 아침 8시 정각) ->RSS(2) → 주제 필터링(키워드) -> OpenAI(5) → Notion(8) -> 예외처리  
 
 1. 각 단계별 구조 및 역할
-   
-    - Trigger : RSS (새 정보 도착)
+
+    - Trigger : RSS 수집 (새 정보 도착, 매일 아침 8시 정각)
     - Filter  : 필터링
     - OpenAI  : AI 요약
     - Action  : Notion 기록 (데이터베이스 기록)
 
-2. 주요 기능
+1. 주요 기능
 
      🔹 스케쥴 트리거 : 정기적으로 매일 아침 8시 정각 자동 실행  
      🔹 RSS 자동 감지 : 지정 RSS에서 최신 항목 가져오기  
-     🔹 키워드 필터링 : 키워드 조건(예:네이버) 만족 항목 선택  
+     🔹 주제 (키워드) 필터링 : 키워드 조건(예:네이버) 만족 항목 1건 선택  
      🔹 AI 요약 (OpenAI GPT-4o-mini)  : 프롬프트 적용, 3줄 요약 생성  
      🔹 URL 자동 정제 및 디코딩  
-     🔹 Notion 자동 저장  : 제목/요약/키워드/요약/날짜 매핑 저장  
+     🔹 Notion 자동 저장  : 제목/요약/키워드/요약/날짜 매핑 저장
+     🔹 예외 처리 : OpenAI 또는 Notion 에러 발생 시 에러알림 메일 발송 및 Resume 처리 
      
 ### 📌  WORKFLOW 
 <img width="739" height="486" alt="image" src="https://github.com/user-attachments/assets/7ae0af1d-fbc3-4255-99f7-79fe9df26709" />
