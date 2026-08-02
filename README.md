@@ -57,12 +57,12 @@
     
   - *트리거 실행 화면(로그)*
     
-    <img width="495" height="356" alt="image" src="https://github.com/user-attachments/assets/4a3c956b-20f4-4f84-a793-f5aa703ed4fd" />  
+<img width="495" height="356" alt="image" src="https://github.com/user-attachments/assets/4a3c956b-20f4-4f84-a793-f5aa703ed4fd" />  
 
 
   - *RSS 수집 실행 화면(로그)*
 
-   <img width="443" height="508" alt="image" src="https://github.com/user-attachments/assets/b7852938-3de6-4501-aaff-dd627c90c763" />
+<img width="443" height="508" alt="image" src="https://github.com/user-attachments/assets/b7852938-3de6-4501-aaff-dd627c90c763" />
  
 ### ✅ Filter  
 
@@ -155,8 +155,7 @@
     
   - *필터 적용 화면(로그)*
 
-<img width="534" height="790" alt="image" src="https://github.com/user-attachments/assets/7ffd71c7-6ee7-449f-baf2-bdcf09db671d" />
-
+<img width="431" height="469" alt="image" src="https://github.com/user-attachments/assets/baa3e0d0-6557-4cce-a1a1-6cd6ff3eeb80" />
    
 
 ### ✅ Module 5 - OpenAI / Generate a completion 
@@ -181,7 +180,7 @@
             뉴스 내용:
             {{2.title}}+{{2.description}}
 
-    <img width="543" height="803" alt="image" src="https://github.com/user-attachments/assets/d985f859-bf13-4c89-84f0-952cb661c1d6" />
+<img width="543" height="803" alt="image" src="https://github.com/user-attachments/assets/d985f859-bf13-4c89-84f0-952cb661c1d6" />
 
 
 ### ✅ Module 8 - Notion / Create a Data Source Item  
