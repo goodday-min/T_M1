@@ -1,7 +1,9 @@
 # 뉴스 요약 자동화 : Notion 데이터베이스   #  
 
-------------  
-## ✅ Module 8 - Notion / Create a Data Source Item 
+------------   
+
+## ✅ Module 8 - Notion / Create a Data Source Item   
+
 ------------    
 
  
@@ -39,7 +41,8 @@
     | 표준 여부 | RSS 2.0 공식 스펙 | 비표준 (자체 처리) |
     | 안정성 | 기사 수정돼도 유지 | URL 파라미터 변경 시 깨짐 |
 
-
+ ----
+  
 - ### Notion 데이터베이스 전체 화면
   
 | Notion 실행 화면 | Notion 에서 AI가 요약한 텍스트가 포함된 뉴스 컨텐츠가 저장된 화면 |
