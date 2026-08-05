@@ -126,7 +126,7 @@
    
    2. 에러 처리가 가장 필요한 핵심 모듈 (Top 2)
       
-      🔹 OpenAI (Generate a completion) : API 호출 한도 초과, 서버 타임아웃, 부적절한 콘텐츠 필터링 등으로 가장 에러가 잦은 구간
+      🔹 OpenAI (Generate a completion) : API 호출 한도 초과, 서버 타임아웃, 부적절한 콘텐츠 필터링 등으로 가장 에러가 잦은 구간  
       🔹 Notion (Create a Database Item): 네트워크 오류나 데이터베이스 속성 불일치로 실패할 수 있음.
    
    3. 에러 처리 적용 정책: Resume (기본값 대체)
